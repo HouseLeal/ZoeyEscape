@@ -1,32 +1,40 @@
-# ZoeyEscape
-a simple JS escape game
+// Hooray Arrays1
+var beginningScenario = ["You are trying to go to bed but Zoey is in your spot", 
+"You want to brush your teeth but Zoey is sitting on your toothbrush", 
+"You want to make Zoey a cake but she cant digest sugar"];
 
-alert("You are trying to go to the bathroom.  Zoey sits quietly in the hallway, staring at you.... ");
+var weapon = ["the pear of anguish", "zoeys other half of her ear", 
+"cyanide laced catnip", "an Illy punch"];
 
-var weapon = prompt("You decide to battle: What is your weapon of choice? Spoon | Dagger | Guitar | Soap")
-var randomNum = Math.round(Math.random());
+var occupation = ["guns rights activist", "youtuber", "Trump supporter", ]
 
-console.log(randomNum);
-console.log(weapon);
+//VERY VARIABLE
+var randomOccupation = occupation[ (rando ( occupation.length -1))];
+var survival = rando(2);
+var randomWeapon = weapon[ (rando (weapon.length - 1))];
 
-alert("You battle with Zoey, armed with " + weapon);
-
-if (randomNum === 0){
-  alert("MeOWWWWW   Zoey claws your leg and scratches your face! She knocks the " + weapon + " out of your hand");
-  var move = prompt("Bloody and barely breathing, you chose to: Bite | Claw | Run");
+//CONJUNCTION FUNCTIONS
+function rando(range){
+	return Math.round(Math.random() * range);
 }
-else if (randomNum === 1){
-  alert("You whoop zoey with " + weapon + " YOU WIN! HAPPY SHITTING!");
+
+//GO TIME!
+alert(beginningScenario [rando (beginningScenario.length - 1) ] );
+alert("This angers you.  You search for a weapon to battle Zoey.....");
+alert("Oh yay! You find: " + randomWeapon);
+
+if (survival === 0){
+	alert("Zoey self destructs and creates a blast radius of 27.4 miles.  You survive the blast but now you encounter a " + randomOccupation);
+}
+else{
+	alert("You beat Zoey with " + randomWeapon + " and go about your day like a normal human after its beaten a cat");
 }
 
-console.log(move);
+var goOn = prompt("Do you wish to take on the " + randomOccupation + " ? (y or n)");
 
-if (move == "Bite"){
-  alert("You bite Zoey in half but her tail half smacks you and you go flying accross the room");
+if (goOn == 'y'){
+	alert("The " + randomOccupation + " brings Zoey back to life and beats you with: " + randomWeapon);
 }
-else if (move == "Claw"){
-  alert("Zoey blocks your claw attack and kicks you in the mouth.  She calls you Claw Aikens and walks away like a boss");
-}
-else {
-  alert("Run! Hooman RUN!!!!");
-}
+else
+	alert("The " + randomOccupation + " will not honor your surrender and beats you with: " + randomWeapon);
+
